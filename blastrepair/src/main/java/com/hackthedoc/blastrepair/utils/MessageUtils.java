@@ -1,4 +1,4 @@
-package com.hackthedoc.template.utils;
+package com.hackthedoc.blastrepair.utils;
 
 import java.util.logging.Logger;
 

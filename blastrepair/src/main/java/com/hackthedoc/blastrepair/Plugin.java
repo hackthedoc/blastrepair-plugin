@@ -1,8 +1,8 @@
-package com.hackthedoc.template;
+package com.hackthedoc.blastrepair;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.hackthedoc.template.utils.MessageUtils;
+import com.hackthedoc.blastrepair.utils.MessageUtils;
 
 public class Plugin extends JavaPlugin {
 
