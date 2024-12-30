@@ -17,6 +17,10 @@ public class ConfigManager {
         config = Plugin.getInstance().getConfig();
     }
 
+    public double getRepairDelay() {
+        return config.getDouble("delay", 2);
+    }
+
     public double getRepairSpeed() {
         return config.getDouble("repair-speed", 0.5);
     }

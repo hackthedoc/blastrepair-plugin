@@ -1,1 +1,2 @@
-repair-speed: 0.5 // in second(s)
+delay: 2          // Delay before the repair starts (in seconds)
+repair-speed: 0.5 // time between each block (in seconds)
