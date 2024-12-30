@@ -11,6 +11,12 @@ commands:
       reload:
         usage: /<command> reload
         description: Reload the config file after a manual modification of the file
+      on:
+        usage: /<command> on
+        description: Enable the repairals
+      off:
+        usage: /<command> off
+        description: Disable the repairals
 permissions:
   blastrepair.admin:
     description: Allow the use of the blastrepair command

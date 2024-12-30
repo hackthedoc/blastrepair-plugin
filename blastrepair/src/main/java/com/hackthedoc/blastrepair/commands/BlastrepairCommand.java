@@ -8,6 +8,8 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 
+import com.hackthedoc.blastrepair.commands.subcommands.OffSubcommand;
+import com.hackthedoc.blastrepair.commands.subcommands.OnSubcommand;
 import com.hackthedoc.blastrepair.commands.subcommands.ReloadSubcommand;
 import com.hackthedoc.blastrepair.utils.MessageUtils;
 
@@ -15,7 +17,9 @@ public class BlastrepairCommand implements CommandExecutor {
     private final Map<String, BiConsumer<CommandSender, String[]>> subcommands = new HashMap<>();
     
     public BlastrepairCommand() {
-        subcommands.put("reload"    , ReloadSubcommand::execute);
+        subcommands.put("reload"    , ReloadSubcommand::execute );
+        subcommands.put("off"       , OffSubcommand::execute    );
+        subcommands.put("on"        , OnSubcommand::execute     );
     }
 
     @Override

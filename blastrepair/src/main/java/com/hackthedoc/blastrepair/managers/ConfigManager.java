@@ -25,7 +25,25 @@ public class ConfigManager {
         return config.getDouble("repair-speed", 0.5);
     }
 
+    public boolean isPluginEnabled() {
+        return config.getBoolean("enabled", true);
+    }
+
     public boolean isRepairEnabledFor(String explosionType) {
         return config.getBoolean("explosion-types."+explosionType, false);
+    }
+
+    public void enablePlugin() {
+        if (isPluginEnabled()) return;
+        
+        config.set("enabled", true);
+        reloadConfig();
+    }
+
+    public void disablePlugin() {
+        if (!isPluginEnabled()) return;
+
+        config.set("enabled", false);
+        reloadConfig();
     }
 }
