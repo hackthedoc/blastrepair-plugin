@@ -3,3 +3,15 @@ main: com.hackthedoc.blastrepair.Plugin
 description: Automatic repairal of any kind of blasts
 version: 0.0.1
 api-version: 1.21
+commands:
+  blastrepair:
+    usage: /blastrepair <subcommand>
+    permission: blastrepair.admin
+    subcommands:
+      reload:
+        usage: /<command> reload
+        description: Reload the config file after a manual modification of the file
+permissions:
+  blastrepair.admin:
+    description: Allow the use of the blastrepair command
+    default: op
