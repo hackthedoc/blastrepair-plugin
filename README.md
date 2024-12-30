@@ -1,27 +1,23 @@
-# Plugin Name
+# BlastRepair Plugin
 
-Quick Description
+Minecraft Plugin to repair blast explosions automatically.
 
 Works for 1.21+ at least.
 > There was no test on prior versions
 
 ## Features
 
-- feature a
-- feature b
-- feature c
+- repairal can be turned on/off
+- repairal speed and start delay are customizable
+- possible to turn on and off the repairs based on the origin of the explosion
 
 ## Commands
 
-- command a
-- command b
-- command c
+- `/blastrepair <on|off|reload>`
 
 ## Permissions
 
-- permission a
-- permission b
-- permission c
+- `blastrepair.admin` : given to all operators by default
 
 ## Installation
 
@@ -30,11 +26,27 @@ Works for 1.21+ at least.
 3. Restart the server.
 4. Configure the `config.yml` file if necessary.
 
-### Requirements
-
-No Requirements
-
 ## Configuration
 
+You can modify the `config.yml` file but be careful not to remove any variables.
+
 ```yaml
+// are repairals enabled or not
+enabled: true     
+
+// Delay before the repair starts (in seconds)
+delay: 2          
+
+// time between each block (in seconds)
+repair-speed: 0.5 
+
+// activate/deactvate repairal based on the explosion type
+explosion-types:
+  creeper: true
+  tnt: true
+  ghast: true
+  bed: true
+  wither: true
+  lightning: true
+```
 
