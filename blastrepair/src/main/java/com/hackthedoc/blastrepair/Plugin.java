@@ -2,6 +2,7 @@ package com.hackthedoc.blastrepair;
 
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.hackthedoc.blastrepair.commands.BlastrepairCommand;
 import com.hackthedoc.blastrepair.listeners.ExplosionListener;
 import com.hackthedoc.blastrepair.managers.ConfigManager;
 import com.hackthedoc.blastrepair.utils.MessageUtils;
@@ -17,6 +18,8 @@ public class Plugin extends JavaPlugin {
     configManager.loadConfig();
 
     getServer().getPluginManager().registerEvents(new ExplosionListener(), this);
+
+    getCommand("blastrepair").setExecutor(new BlastrepairCommand());
 
     MessageUtils.log("template enabled");
   }
