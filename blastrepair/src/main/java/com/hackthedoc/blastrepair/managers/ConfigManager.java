@@ -24,4 +24,8 @@ public class ConfigManager {
     public double getRepairSpeed() {
         return config.getDouble("repair-speed", 0.5);
     }
+
+    public boolean isRepairEnabledFor(String explosionType) {
+        return config.getBoolean("explosion-types."+explosionType, false);
+    }
 }

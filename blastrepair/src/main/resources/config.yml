@@ -1,2 +1,11 @@
 delay: 2          // Delay before the repair starts (in seconds)
 repair-speed: 0.5 // time between each block (in seconds)
+
+// activate/deactvate repairal based on the explosion type
+explosion-types:
+  creeper: true
+  tnt: true
+  ghast: true
+  bed: true
+  wither: true
+  lightning: true

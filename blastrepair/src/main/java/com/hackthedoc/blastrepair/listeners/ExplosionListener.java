@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 
 import org.bukkit.Material;
 import org.bukkit.block.Block;
+import org.bukkit.entity.Entity;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityExplodeEvent;
@@ -21,6 +22,14 @@ public class ExplosionListener implements Listener {
 
     @EventHandler
     public void onEntityExplode(EntityExplodeEvent event) {
+        Entity entity = event.getEntity();
+        String explositionType = "unknown";
+        if (entity != null)
+            explositionType = entity.getType().toString().toLowerCase();
+        
+        if (!Plugin.getInstance().getConfigManager().isRepairEnabledFor(explositionType))
+            return;
+
         List<Block> affectedBlocks = event.blockList().stream()
             .filter(block -> block.getType() != Material.AIR)
             .collect(Collectors.toList());
