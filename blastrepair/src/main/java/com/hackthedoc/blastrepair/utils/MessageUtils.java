@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import net.md_5.bungee.api.ChatColor;
 
 public class MessageUtils {
-    private static final Logger LOGGER=Logger.getLogger("tribes");
+    private static final Logger LOGGER=Logger.getLogger("BlastRepair");
 
     public static void log(String msg) {
         LOGGER.info(msg);
