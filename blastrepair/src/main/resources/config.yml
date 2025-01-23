@@ -2,10 +2,10 @@
 enabled: true     
 
 # Delay before the repair starts (in seconds)
-delay: 2          
+delay: 1
 
 # time between each block (in seconds)
-repair-speed: 0.5 
+repair-speed: 0.2
 
 # activate/deactvate repairal based on the explosion type
 explosion-types:
