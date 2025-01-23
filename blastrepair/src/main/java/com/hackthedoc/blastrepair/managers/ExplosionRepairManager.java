@@ -3,29 +3,19 @@ package com.hackthedoc.blastrepair.managers;
 import java.util.List;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.Material;
-import org.bukkit.block.Block;
+import org.bukkit.block.BlockState;
+
+import com.hackthedoc.blastrepair.utils.MessageUtils;
 
 public class ExplosionRepairManager {
-    public void repairBlocks(List<Block> blocks, double speed) {
-        Bukkit.getScheduler().runTaskTimerAsynchronously(Bukkit.getPluginManager().getPlugin("BlastRepair"), new Runnable() {
-            private int index = 0;
-        
-            @Override
-            public void run() {
-                if (index >= blocks.size()) {
-                    Bukkit.getScheduler().cancelTask(this.hashCode());
-                    return;
-                }
-                Block block = blocks.get(index);
-                Location loc = block.getLocation();
-                Material originalMaterial = block.getType();
+    public void repairBlocks(List<BlockState> blocks, double speed) {
+        for (int i = 0; i < blocks.size(); i++) {
+            BlockState block = blocks.get(i);
 
-                loc.getBlock().setType(originalMaterial);
-
-                index++;
-           }
-        }, 0L, (long)(speed*20));
+            Bukkit.getScheduler().runTaskLater(com.hackthedoc.blastrepair.Plugin.getInstance(), () -> {
+                MessageUtils.log("replacing a block at "+block.getLocation().toString());
+                block.update(true, false);
+            }, (long)(i*speed)*20L);
+        }
     }
 }

@@ -1,13 +1,13 @@
-// are repairals enabled or not
+# are repairals enabled or not
 enabled: true     
 
-// Delay before the repair starts (in seconds)
+# Delay before the repair starts (in seconds)
 delay: 2          
 
-// time between each block (in seconds)
+# time between each block (in seconds)
 repair-speed: 0.5 
 
-// activate/deactvate repairal based on the explosion type
+# activate/deactvate repairal based on the explosion type
 explosion-types:
   creeper: true
   tnt: true
