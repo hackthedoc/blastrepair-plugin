@@ -31,16 +31,16 @@ Works for 1.21+ at least.
 You can modify the `config.yml` file but be careful not to remove any variables.
 
 ```yaml
-// are repairals enabled or not
+# are repairals enabled or not
 enabled: true     
 
-// Delay before the repair starts (in seconds)
-delay: 2          
+# Delay before the repair starts (in seconds)
+delay: 1         
 
-// time between each block (in seconds)
-repair-speed: 0.5 
+# time between each block (in seconds)
+repair-speed: 0.2
 
-// activate/deactvate repairal based on the explosion type
+# activate/deactvate repairal based on the explosion type
 explosion-types:
   creeper: true
   tnt: true
